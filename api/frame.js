@@ -201,12 +201,11 @@ function getLeaderboard() {
     return []; // Empty until you connect real database
 }
 
-function storePrediction(fid, prediction) {
-    // In a real app, store in database
-    // For now, just log it
-    console.log(`Stored prediction: FID ${fid} predicted ${prediction} at ${new Date()}`);
+function storePrediction(fid, prediction, blockHeight) {
+    // In a real app, store in database with block height
+    console.log(`Stored prediction: FID ${fid} predicted ${prediction} for block #${blockHeight} at ${new Date()}`);
     
     // You could store in memory for demo purposes:
     // if (!global.predictions) global.predictions = [];
-    // global.predictions.push({ fid, prediction, timestamp: Date.now() });
-              }
+    // global.predictions.push({ fid, prediction, blockHeight, timestamp: Date.now() });
+                }
